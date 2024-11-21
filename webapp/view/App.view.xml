@@ -1,0 +1,214 @@
+<mvc:View
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    controllerName="test.test.controller.App"
+>
+    <App id="app">
+        <Page id="homePage">
+            <content>
+                <VBox id="tables">
+                    <Button
+                        id="driverButton"
+                        text="Drivers"
+                        press=".onNavigateToDrivers"
+                    />
+                    <Button
+                        id="productButton"
+                        text="Product"
+                        press=".onNavigateToProducts"
+                    />
+                </VBox>
+            </content>
+        </Page>
+        <!-- Drivers Sayfası -->
+        <Page
+            id="driversPage"
+            title="Drivers"
+        >
+            <content>
+                <VBox id="DriverBox">
+                    <Label
+                        id="firstnameText"
+                        text="FirstName"
+                    />
+                    <Input
+                        id="firstnameInput"
+                        placeholder="Firstname"
+                    />
+
+                    <Label
+                        id="lastnameText"
+                        text="LastName"
+                    />
+                    <Input
+                        id="lastnameInput"
+                        placeholder="Lastname"
+                    />
+
+                    <Label
+                        id="identityText"
+                        text="Identity"
+                    />
+                    <Input
+                        id="identityInput"
+                        placeholder="Identity"
+                    />
+
+                    <Label
+                        id="phoneText"
+                        text="Phone"
+                    />
+                    <Input
+                        id="phoneInput"
+                        placeholder="Phone"
+                    />
+
+                    <Label
+                        id="lisenceText"
+                        text="Driving License"
+                    />
+                    <Input
+                        id="lisenceInput"
+                        placeholder="Driving License"
+                    />
+
+                    <Button
+                        id="saveButton"
+                        text="Save Data"
+                        press=".onSaveDriverData"
+                    />
+                    <Button
+                        id="fetchDriversButton"
+                        text="Fetch Drivers"
+                        press=".onFetchDrivers"
+                    />
+                    <Table
+                        id="driverTable"
+                        items="{driversModel>/drivers}"
+                    >
+                        <columns>
+                            <Column id="ColumnFirstName">
+                                <Text
+                                    id="fetchfirstnameText"
+                                    text="First Name"
+                                />
+                            </Column>
+                            <Column id="ColumnLastName">
+                                <Text
+                                    id="fetchlastnameText"
+                                    text="Last Name"
+                                />
+                            </Column>
+                            <Column id="ColumnPhone">
+                                <Text
+                                    id="fetchPhoneText"
+                                    text="Phone"
+                                />
+                            </Column>
+                            <Column id="ColumnLisence">
+                                <Text
+                                    id="fetchlisence"
+                                    text="License"
+                                />
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem id="fetchItem">
+                                <cells>
+                                    <Text
+                                        id="fetchFirstName"
+                                        text="{driversModel>firstname}"
+                                    />
+                                    <Text
+                                        id="fetchLastName"
+                                        text="{driversModel>lastname}"
+                                    />
+                                    <Text
+                                        id="fetchPhone"
+                                        text="{driversModel>phone}"
+                                    />
+                                    <Text
+                                        id="fetchLisence"
+                                        text="{driversModel>driving_license}"
+                                    />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </VBox>
+                <Button
+                    id="driversHomeButton"
+                    text="Geri Dön"
+                    press=".onNavigateToHome"
+                />
+            </content>
+        </Page>
+        <!-- Products Sayfası -->
+        <Page
+            id="productsPage"
+            title="Products"
+        >
+            <content>
+                <Label
+                    id="productCodeText"
+                    text="Product Code"
+                />
+                <Input
+                    id="productCodeInput"
+                    placeholder="ProductCode"
+                />
+
+                <Label
+                    id="productDefinitionText"
+                    text="Product Definition"
+                />
+                <Input
+                    id="productDefinitionInput"
+                    placeholder="Product Definition"
+                />
+                <Button
+                    id="saveProductButton"
+                    text="Save Data"
+                    press=".onSaveProductData"
+                />
+                <Button
+                    id="fetchProductButton"
+                    text="Fetch Product"
+                    press=".onFetchProduct"
+                />
+
+                <Table
+                    id="productTable"
+                    items="{productModel>/products}"
+                >
+                <columns>
+                        <Column id="ColumnProductCode">
+                            <Text id="fetchproductcodeText" text="Product Code" />
+                        </Column>
+                        <Column id="ColumnProductDefinition">
+                            <Text id="fetchproductdefinitionText" text="Product Definition" />
+                        </Column>
+                 </columns>
+                 <items>
+                        <ColumnListItem id="fetchProductItem">
+                            <cells>
+                                <Text id="productcode" 
+                                text="{productModel>product_code}" />
+                                <Text id="productdefinition"
+                                    text="{productModel>product_definition}"
+                                />
+                            </cells>
+                        </ColumnListItem>
+                  </items>
+                </Table>
+                <VBox id="productVBox">
+                    <Button
+                        id="productHomeButton"
+                        text="Geri Dön"
+                        press=".onNavigateToHome"
+                    />
+                </VBox>
+            </content>
+        </Page>
+    </App>
+</mvc:View>

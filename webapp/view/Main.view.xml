@@ -1,0 +1,8 @@
+<mvc:View controllerName="test.test.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <VBox id="vbox">
+     <Text id="text" text="bu bir SAP uygulamasıdır."></Text>
+     <Button id="button" text="tıkla" press="onButtonClick" ></Button>
+    </VBox>
+</mvc:View>
