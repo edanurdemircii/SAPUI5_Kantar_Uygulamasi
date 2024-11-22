@@ -4,19 +4,19 @@ const sequelize = require('../db');
 const Suppllier = sequelize.define('Suppllier', {
     title: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
     },
     address: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
     },
     tax_office: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
     },
     tax_number: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
     }
 });
 

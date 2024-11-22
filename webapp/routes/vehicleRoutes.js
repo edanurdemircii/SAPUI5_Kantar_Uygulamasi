@@ -2,13 +2,20 @@ const express = require('express');
 const router = express.Router();
 const { Vehicle } = require('../models/Vehicle'); // Vehicle modelini import edin
 
-// Tüm araçları listelemek
-router.get('/', async (req, res) => {
+router.post("/vehicles", async (req, res) => {
+    const { license_plate, registration_no,trailer_plate} = req.body;
+
     try {
-        const vehicles = await Vehicle.findAll();
-        res.json(vehicles);
-    } catch (err) {
-        res.status(500).json({ error: err.message });
+        // Veritabanına kaydet
+        const newVehicle = await Vehicle.create({
+             license_plate,
+             registration_no,
+             trailer_plate,
+        });
+        res.status(201).json(newVehicle); // Başarılı kayıt yanıtı
+    } catch (error) {
+        console.error("Vehicle kayıt hatası:", error);
+        res.status(500).json({ error: "Vehicle kayıt hatası" });
     }
 });
 

@@ -10,6 +10,9 @@ const Product = require('./models/Product');
 const WeighingProcess = require('./models/WeighingProcess'); 
 const { getAllDrivers, createDriver, updateDriver, deleteDriver } = require('./controller/driverController');
 const { getAllProduct, createProduct, updateProduct, deleteProduct } = require('./controller/productController');
+const { getAllSupplier, createSupplier} = require('./controller/supplierController');
+const { getAllVehicle, createVehicle} = require('./controller/vehicleController');
+const { getAllProcess, createProcess,updateProcess} = require('./controller/processController');
 
 
 const app = express();
@@ -23,6 +26,16 @@ app.get('/drivers', getAllDrivers);
 app.post('/drivers', createDriver);
 app.put('/drivers/:id', updateDriver);
 app.delete('/drivers/:id', deleteDriver);
+
+app.get('/suppliers', getAllSupplier);
+app.post('/suppliers', createSupplier);
+
+app.get('/vehicles', getAllVehicle);
+app.post('/vehicles', createVehicle);
+
+app.get('/process', getAllProcess);
+app.post('/process', createProcess);
+app.put('/process/:id',updateProcess);
 
 app.get('/products', getAllProduct);
 app.post('/products', createProduct);
@@ -42,8 +55,8 @@ app.get('/', (req, res) => {
 });
 
 //API istekleri için endpointler
-// const wpRoutes = require('./routes/wpRoutes');
-// app.use('/api/process', wpRoutes);
+ const wpRoutes = require('./routes/wpRoutes');
+ app.use('/api/process', wpRoutes);
 const productRoutes = require('./routes/productRoutes');
 app.use('/api/products', productRoutes);
 const supplierRoutes = require('./routes/supplierRoutes');
@@ -51,7 +64,6 @@ app.use('/api/suppliers', supplierRoutes);
 const driverRoutes = require('./routes/driverRoutes');
 app.use('/api/drivers', driverRoutes);
 const vehicleRoutes = require('./routes/vehicleRoutes');
-
 app.use('/api/vehicles', vehicleRoutes);
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));

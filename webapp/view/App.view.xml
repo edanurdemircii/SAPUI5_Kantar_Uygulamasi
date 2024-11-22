@@ -7,7 +7,7 @@
         <Page id="homePage">
             <content>
                 <VBox id="tables">
-                    <Button
+                    <!-- <Button
                         id="driverButton"
                         text="Drivers"
                         press=".onNavigateToDrivers"
@@ -17,11 +17,460 @@
                         text="Product"
                         press=".onNavigateToProducts"
                     />
+                    <Button
+                        id="supplierButton"
+                        text="Supplier"
+                        press=".onNavigateToSupplier"
+                    />
+                    <Button
+                        id="vehicleButton"
+                        text="Vehicle"
+                        press=".onNavigateToVehicle"
+                    /> -->
+                    <Button
+                        id="weighingButton"
+                        text="Process"
+                        press=".onNavigateToProcess"
+                    />
                 </VBox>
             </content>
         </Page>
-        <!-- Drivers Sayfası -->
         <Page
+            id="processPage"
+            title="Process"
+        >
+            <content>
+                <VBox id="ProcessBox">
+                    <Label
+                        id="receiptNo"
+                        text="Receipt No"
+                    />
+                    <Input
+                        id="receiptNoInput"
+                        placeholder="Receipt No"
+                    />
+                    <Label
+                        id="license_plate"
+                        text="License Plate"
+                    />
+                    <Input
+                        id="licenseplateInput"
+                        placeholder="License Plate"
+                    />
+
+                    <Label
+                        id="registration_no"
+                        text="Registration No"
+                    />
+                    <Input
+                        id="registrationInput"
+                        placeholder="Registration No"
+                    />
+                    <Label
+                        id="trailer_plate"
+                        text="Trailer Plate"
+                    />
+                    <Input
+                        id="trailerplateInput"
+                        placeholder="Trailer Plate"
+                    />
+
+                    <Label
+                        id="firstnameText"
+                        text="FirstName"
+                    />
+                    <Input
+                        id="firstnameInput"
+                        placeholder="Firstname"
+                    />
+
+                    <Label
+                        id="lastnameText"
+                        text="LastName"
+                    />
+                    <Input
+                        id="lastnameInput"
+                        placeholder="Lastname"
+                    />
+
+                    <Label
+                        id="identityText"
+                        text="Identity"
+                    />
+                    <Input
+                        id="identityInput"
+                        placeholder="Identity"
+                    />
+
+                    <Label
+                        id="phoneText"
+                        text="Phone"
+                    />
+                    <Input
+                        id="phoneInput"
+                        placeholder="Phone"
+                    />
+
+                    <Label
+                        id="licenceText"
+                        text="Driving License"
+                    />
+                    <Input
+                        id="licenseInput"
+                        placeholder="Driving License"
+                    />
+                    <Label
+                        id="productCodeText"
+                        text="Product Code"
+                    />
+                    <Input
+                        id="productCodeInput"
+                        placeholder="ProductCode"
+                    />
+
+                    <Label
+                        id="productDefinitionText"
+                        text="Product Definition"
+                    />
+                    <Input
+                        id="productDefinitionInput"
+                        placeholder="Product Definition"
+                    />
+                    <Label
+                        id="supplierTitleText"
+                        text="Supplier Title"
+                    />
+                    <Input
+                        id="supplierTitleInput"
+                        placeholder="Supplier Title"
+                    />
+
+                    <Label
+                        id="supplierAddressText"
+                        text="Supplier Address"
+                    />
+                    <Input
+                        id="supplierAddressInput"
+                        placeholder="Supplier Address"
+                    />
+                    <Label
+                        id="supplierTaxOfficeText"
+                        text="Tax Office"
+                    />
+                    <Input
+                        id="supplierTaxOfficeInput"
+                        placeholder="Tax Office"
+                    />
+                    <Label
+                        id="supplierTaxNumberText"
+                        text="Tax Number"
+                    />
+                    <Input
+                        id="supplierTaxNumberInput"
+                        placeholder="Tax Number"
+                    />
+                    <Label
+                        id="firstweighingText"
+                        text="First Weighing"
+                    />
+                    <Input
+                        id="firstweighingInput"
+                        placeholder="First Weighing"
+                    />
+                    <Label
+                        id="lastweighingText"
+                        text="Last Weighing"
+                    />
+                    <Input
+                        id="lastweighingInput"
+                        placeholder="Last Weighing"
+                    />
+                    <Label
+                        id="netweighingText"
+                        text="Net Weighing"
+                    />
+                    <Input
+                        id="netweighingInput"
+                        placeholder="Net Weighing"
+                    />
+                    <Label
+                        id="entryDateText"
+                        text="Entry Date"
+                    />
+                    <Input
+                        id="entryDateInput"
+                        placeholder="Entry Date"
+                    />
+                    <Label
+                        id="releaseDateText"
+                        text="Release Date"
+                    />
+                    <Input
+                        id="releaseDateInput"
+                        placeholder="Release Date"
+                    />
+                    <Label
+                        id="deliveryDateText"
+                        text="Delivery Date"
+                    />
+                    <Input
+                        id="deliveryDateInput"
+                        placeholder="Delivery Date"
+                    />
+                    <Label
+                        id="deliveryNoText"
+                        text="Delivery No"
+                    />
+                    <Input
+                        id="deliveryNoInput"
+                        placeholder="Delivery No"
+                    />
+
+                    <Button
+                        id="saveButton"
+                        text="Save Data"
+                        press=".onSaveProcessData"
+                    />
+                    <Button
+                        id="fetchProcessButton"
+                        text="Fetch Process"
+                        press=".onFetchProcess"
+                    />
+                    <!-- Tedarikçi Adı Filter -->
+                    <Label
+                        id="supplierName"
+                        text="Tedarikçi Adı"
+                    />
+                    <Input
+                        id="supplierFilterInput"
+                        placeholder="Tedarikçi adı girin"
+                    />
+
+                    <!-- Araç Plakası Filter -->
+                    <Label
+                        id="plate"
+                        text="Araç Plakası"
+                    />
+                    <Input
+                        id="licensePlateFilterInput"
+                        placeholder="Araç plakası girin"
+                    />
+
+                    <!-- Tarih Filter -->
+                    <Label
+                        id="filterDate"
+                        text="Tarih Aralığı"
+                    />
+                    <DatePicker
+                        id="startDateInput"
+                        placeholder="Başlangıç tarihi"
+                    />
+                    <DatePicker
+                        id="endDateInput"
+                        placeholder="Bitiş tarihi"
+                    />
+
+                    <!-- Filtrele Butonu -->
+                    <Button
+                        id="filterButton"
+                        text="Filtrele"
+                        press="onFilterData"
+                    />
+                    <Table
+                        id="processTable"
+                        items="{processModel>/process}"
+                    >
+                        <columns>
+                            <Column id="ColumnReceiptNo">
+                                <Text
+                                    id="fetchreceiptnoText"
+                                    text="Receipt No"
+                                />
+                            </Column>
+                            <Column id="Columnlicense_plate">
+                                <Text
+                                    id="fetchlicense_plate"
+                                    text="license_plate"
+                                />
+                            </Column>
+                            <Column id="Columnregistration_no">
+                                <Text
+                                    id="fetchregistration_noText"
+                                    text="registration_no"
+                                />
+                            </Column>
+                            <Column id="Columntrailer_plate">
+                                <Text
+                                    id="fetchtrailer_plateText"
+                                    text="trailer_plate"
+                                />
+                            </Column>
+                            <Column id="ColumnFirstName">
+                                <Text
+                                    id="fetchfirstnameText"
+                                    text="First Name"
+                                />
+                            </Column>
+                            <Column id="ColumnLastName">
+                                <Text
+                                    id="fetchlastnameText"
+                                    text="Last Name"
+                                />
+                            </Column>
+                            <Column id="ColumnSupplierTitle">
+                                <Text
+                                    id="fetchsuppliertitleText"
+                                    text="Title"
+                                />
+                            </Column>
+                            <Column id="ColumnSupplierAddress">
+                                <Text
+                                    id="fetchsupplierAddressText"
+                                    text="Address"
+                                />
+                            </Column>
+                            <Column id="ColumnProductCode">
+                                <Text
+                                    id="fetchproductcodeText"
+                                    text="Product Code"
+                                />
+                            </Column>
+                            <Column id="ColumnFirstWeighing">
+                                <Text
+                                    id="fetchfirstweighingText"
+                                    text="First Weighing"
+                                />
+                            </Column>
+                            <Column id="ColumnLastWeighing">
+                                <Text
+                                    id="fetchlastweighingText"
+                                    text="Last Weighing"
+                                />
+                            </Column>
+                            <Column id="ColumnNetWeighing">
+                                <Text
+                                    id="fetchnetweighingText"
+                                    text="Net Weighing"
+                                />
+                            </Column>
+                            <Column id="ColumnEntryDate">
+                                <Text
+                                    id="fetchentrydateText"
+                                    text="Entry Date"
+                                />
+                            </Column>
+                            <Column id="ColumnReleaseDate">
+                                <Text
+                                    id="fetchreleasedateText"
+                                    text="Release Date"
+                                />
+                            </Column>
+                            <Column id="ColumnDeliveryDate">
+                                <Text
+                                    id="fetchdeliverydateText"
+                                    text="Delivery Date"
+                                />
+                            </Column>
+                            <Column id="ColumnDeliveryNo">
+                                <Text
+                                    id="fetchdeliverynoText"
+                                    text="Delivery No"
+                                />
+                            </Column>
+                        </columns>
+
+                        <items>
+                            <ColumnListItem id="fetchItem">
+                                <cells>
+                                    <Text
+                                        id="fetchReceiptNo"
+                                        text="{processModel>receipt_no}"
+                                    />
+                                    <Text
+                                        id="fetchLicensePlate"
+                                        text="{processModel>license_plate}"
+                                    />
+                                    <Text
+                                        id="fetchRegistrationNo"
+                                        text="{processModel>registration_no}"
+                                    />
+                                    <Text
+                                        id="fetchTrailerPalte"
+                                        text="{processModel>trailer_plate}"
+                                    />
+                                    <Text
+                                        id="fetchFirstName"
+                                        text="{processModel>firstname}"
+                                    />
+                                    <Text
+                                        id="fetchLastName"
+                                        text="{processModel>lastname}"
+                                    />
+                                    <Text
+                                        id="fetchTitle"
+                                        text="{processModel>title}"
+                                    />
+                                    <Text
+                                        id="fetchAddress"
+                                        text="{processModel>address}"
+                                    />
+                                    <Text
+                                        id="fetchProductCode"
+                                        text="{processModel>product_code}"
+                                    />
+                                    <Text
+                                        id="fetchFirstWeighing"
+                                        text="{processModel>first_weighing}"
+                                    />
+                                    <Text
+                                        id="fetchLastWeighing"
+                                        text="{processModel>last_weighing}"
+                                    />
+                                    <Text
+                                        id="fetchNetWeighing"
+                                        text="{processModel>net_weighing}"
+                                    />
+                                    <Text
+                                        id="fetchEntryDate"
+                                        text="{processModel>entry_date}"
+                                    />
+                                    <Text
+                                        id="fetchReleaseDate"
+                                        text="{processModel>release_date}"
+                                    />
+                                    <Text
+                                        id="fetchDeliveryDate"
+                                        text="{processModel>delivery_date}"
+                                    />
+                                    <Text
+                                        id="fetchDeliveryNo"
+                                        text="{processModel>delivery_no}"
+                                    />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </VBox>
+                <Button
+                    id="onExportToExel"
+                    text="Excel Olarak İndir"
+                    press="onExportToExcel"
+                />
+                <Button
+                    id="update"
+                    text="Update"
+                    press=".onSaveProcessEditData"
+                />
+
+                <Button
+                    id="driversHomeButton"
+                    text="Geri Dön"
+                    press=".onNavigateToHome"
+                />
+            </content>
+        </Page>
+
+        <!-- <Page
             id="driversPage"
             title="Drivers"
         >
@@ -112,6 +561,7 @@
                                 />
                             </Column>
                         </columns>
+
                         <items>
                             <ColumnListItem id="fetchItem">
                                 <cells>
@@ -143,7 +593,6 @@
                 />
             </content>
         </Page>
-        <!-- Products Sayfası -->
         <Page
             id="productsPage"
             title="Products"
@@ -181,25 +630,34 @@
                     id="productTable"
                     items="{productModel>/products}"
                 >
-                <columns>
+                    <columns>
                         <Column id="ColumnProductCode">
-                            <Text id="fetchproductcodeText" text="Product Code" />
+                            <Text
+                                id="fetchproductcodeText"
+                                text="Product Code"
+                            />
                         </Column>
                         <Column id="ColumnProductDefinition">
-                            <Text id="fetchproductdefinitionText" text="Product Definition" />
+                            <Text
+                                id="fetchproductdefinitionText"
+                                text="Product Definition"
+                            />
                         </Column>
-                 </columns>
-                 <items>
+                    </columns>
+                    <items>
                         <ColumnListItem id="fetchProductItem">
                             <cells>
-                                <Text id="productcode" 
-                                text="{productModel>product_code}" />
-                                <Text id="productdefinition"
+                                <Text
+                                    id="productcode"
+                                    text="{productModel>product_code}"
+                                />
+                                <Text
+                                    id="productdefinition"
                                     text="{productModel>product_definition}"
                                 />
                             </cells>
                         </ColumnListItem>
-                  </items>
+                    </items>
                 </Table>
                 <VBox id="productVBox">
                     <Button
@@ -210,5 +668,214 @@
                 </VBox>
             </content>
         </Page>
+        <Page
+            id="supplierPage"
+            title="Supplier"
+        >
+            <content>
+                <Label
+                    id="supplierTitleText"
+                    text="Supplier Title"
+                />
+                <Input
+                    id="supplierTitleInput"
+                    placeholder="Supplier Title"
+                />
+
+                <Label
+                    id="supplierAddressText"
+                    text="Supplier Address"
+                />
+                <Input
+                    id="supplierAddressInput"
+                    placeholder="Supplier Address"
+                />
+                <Label
+                    id="supplierTaxOfficeText"
+                    text="Tax Office"
+                />
+                <Input
+                    id="supplierTaxOfficeInput"
+                    placeholder="Tax Office"
+                />
+                <Label
+                    id="supplierTaxNumberText"
+                    text="Tax Number"
+                />
+                <Input
+                    id="supplierTaxNumberInput"
+                    placeholder="Tax Number"
+                />
+                <Button
+                    id="saveSupplierButton"
+                    text="Save Data"
+                    press=".onSaveSupplierData"
+                />
+                <Button
+                    id="fetchSupplierButton"
+                    text="Fetch Supplier"
+                    press=".onFetchSupplier"
+                />
+
+                <Table
+                    id="supplierTable"
+                    items="{supplierModel>/suppliers}"
+                >
+                    <columns>
+                        <Column id="ColumnSupplierTitle">
+                            <Text
+                                id="fetchsuppliertitleText"
+                                text="Title"
+                            />
+                        </Column>
+                        <Column id="ColumnSupplierAddress">
+                            <Text
+                                id="fetchsupplierAddressText"
+                                text="Address"
+                            />
+                        </Column>
+                        <Column id="ColumnSupplierTaxOffice">
+                            <Text
+                                id="fetchsupplierTaxOfficeText"
+                                text="Tax Office"
+                            />
+                        </Column>
+                        <Column id="ColumnSupplierTaxNumber">
+                            <Text
+                                id="fetchsupplierTaxNumberText"
+                                text="Tax Number"
+                            />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem id="fetchSupplierItem">
+                            <cells>
+                                <Text
+                                    id="suppliertitle"
+                                    text="{supplierModel>title}"
+                                />
+                                <Text
+                                    id="supplierAddress"
+                                    text="{supplierModel>address}"
+                                />
+                                <Text
+                                    id="supplierTaxOffice"
+                                    text="{supplierModel>tax_office}"
+                                />
+                                <Text
+                                    id="supplierTaxNumber"
+                                    text="{supplierModel>tax_number}"
+                                />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+                <VBox id="supplierVBox">
+                    <Button
+                        id="supplierHomeButton"
+                        text="Geri Dön"
+                        press=".onNavigateToHome"
+                    />
+                </VBox>
+            </content>
+        </Page>
+
+        <Page
+            id="vehiclePage"
+            title="Vehicle"
+        >
+            <content>
+                <Label
+                    id="license_plate"
+                    text="License Plate"
+                />
+                <Input
+                    id="licenseplateInput"
+                    placeholder="License Plate"
+                />
+
+                <Label
+                    id="registration_no"
+                    text="Registration No"
+                />
+                <Input
+                    id="registrationInput"
+                    placeholder="Registration No"
+                />
+                <Label
+                    id="trailer_plate"
+                    text="Trailer Plate"
+                />
+                <Input
+                    id="trailerplateInput"
+                    placeholder="Trailer Plate"
+                />
+               
+                <Button
+                    id="saveVehicleButton"
+                    text="Save Data"
+                    press=".onSaveVehicleData"
+                />
+                <Button
+                    id="fetchVehicleButton"
+                    text="Fetch Vehicle"
+                    press=".onFetchVehicle"
+                />
+
+                <Table
+                    id="vehicleTable"
+                    items="{vehicleModel>/vehicles}"
+                >
+                    <columns>
+                        <Column id="Columnlicense_plate">
+                            <Text
+                                id="fetchlicense_plate"
+                                text="license_plate"
+                            />
+                        </Column>
+                        <Column id="Columnregistration_no">
+                            <Text
+                                id="fetchregistration_noText"
+                                text="registration_no"
+                            />
+                        </Column>
+                        <Column id="Columntrailer_plate">
+                            <Text
+                                id="fetchtrailer_plateText"
+                                text="trailer_plate"
+                            />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem id="fetchVehicleItem">
+                            <cells>
+                                <Text
+                                    id="licenseplate"
+                                    text="{vehicleModel>license_plate}"
+                                />
+                                <Text
+                                    id="registrationno"
+                                    text="{vehicleModel>registration_no}"
+                                />
+                                <Text
+                                    id="trailerplate"
+                                    text="{vehicleModel>trailer_plate}"
+                                />
+                            
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+                <VBox id="vehicleVBox">
+                    <Button
+                        id="vehicleHomeButton"
+                        text="Geri Dön"
+                        press=".onNavigateToHome"
+                    />
+                </VBox>
+            </content>
+        </Page> -->
     </App>
+    
 </mvc:View>
+
