@@ -1,9 +1,8 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../db');
-//Kantar İşlemleri
+
 const WeighingProcess = sequelize.define('WeighingProcess', {
   receipt_no: {
-    //fiş numarası
     type: DataTypes.STRING,
     allowNull: false,
     unique: true,
@@ -47,22 +46,6 @@ const WeighingProcess = sequelize.define('WeighingProcess', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  title: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  address: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  tax_office: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  tax_number: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
   first_weighing: {
     type: DataTypes.FLOAT,
   },
@@ -79,12 +62,13 @@ const WeighingProcess = sequelize.define('WeighingProcess', {
     type: DataTypes.DATE,
   },
   delivery_date: {
-    //irsaliye
     type: DataTypes.DATE,
   },
   delivery_no: {
     type: DataTypes.STRING,
   },
+
 });
+
 module.exports = WeighingProcess;
 

@@ -10,7 +10,7 @@ const Product = require('./models/Product');
 const WeighingProcess = require('./models/WeighingProcess'); 
 const { getAllDrivers, createDriver, updateDriver, deleteDriver } = require('./controller/driverController');
 const { getAllProduct, createProduct, updateProduct, deleteProduct } = require('./controller/productController');
-const { getAllSupplier, createSupplier} = require('./controller/supplierController');
+const {updateSupplier, getAllSupplier, createSupplier} = require('./controller/supplierController');
 const { getAllVehicle, createVehicle} = require('./controller/vehicleController');
 const { getAllProcess, createProcess,updateProcess} = require('./controller/processController');
 
@@ -22,25 +22,18 @@ app.use(bodyParser.json());
 const PORT = 3000;
 
 // Rotalar
-app.get('/drivers', getAllDrivers);
-app.post('/drivers', createDriver);
-app.put('/drivers/:id', updateDriver);
-app.delete('/drivers/:id', deleteDriver);
+
 
 app.get('/suppliers', getAllSupplier);
 app.post('/suppliers', createSupplier);
+app.put('/suppliers/:id',updateSupplier);
 
-app.get('/vehicles', getAllVehicle);
-app.post('/vehicles', createVehicle);
 
 app.get('/process', getAllProcess);
 app.post('/process', createProcess);
 app.put('/process/:id',updateProcess);
 
-app.get('/products', getAllProduct);
-app.post('/products', createProduct);
-app.put('/products/:id', updateProduct);
-app.delete('/products/:id', deleteProduct);
+
 
 // Sequelize ile tabloları oluşturduk
 sequelize.sync({ force: true }).then(() => {

@@ -2,53 +2,16 @@
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     controllerName="test.test.controller.App"
+    
 >
-    <App id="app">
-        <Page id="homePage">
-            <content>
-                <VBox id="tables">
-                    <!-- <Button
-                        id="driverButton"
-                        text="Drivers"
-                        press=".onNavigateToDrivers"
-                    />
-                    <Button
-                        id="productButton"
-                        text="Product"
-                        press=".onNavigateToProducts"
-                    />
-                    <Button
-                        id="supplierButton"
-                        text="Supplier"
-                        press=".onNavigateToSupplier"
-                    />
-                    <Button
-                        id="vehicleButton"
-                        text="Vehicle"
-                        press=".onNavigateToVehicle"
-                    /> -->
-                    <Button
-                        id="weighingButton"
-                        text="Process"
-                        press=".onNavigateToProcess"
-                    />
-                </VBox>
-            </content>
-        </Page>
+  
+    <App id="app" class="myAppCustom">
         <Page
             id="processPage"
             title="Process"
         >
             <content>
-                <VBox id="ProcessBox">
-                    <Label
-                        id="receiptNo"
-                        text="Receipt No"
-                    />
-                    <Input
-                        id="receiptNoInput"
-                        placeholder="Receipt No"
-                    />
+                <VBox id="ProcessBox" class="myVBoxClass">  
                     <Label
                         id="license_plate"
                         text="License Plate"
@@ -186,14 +149,6 @@
                         placeholder="Last Weighing"
                     />
                     <Label
-                        id="netweighingText"
-                        text="Net Weighing"
-                    />
-                    <Input
-                        id="netweighingInput"
-                        placeholder="Net Weighing"
-                    />
-                    <Label
                         id="entryDateText"
                         text="Entry Date"
                     />
@@ -235,6 +190,11 @@
                         id="fetchProcessButton"
                         text="Fetch Process"
                         press=".onFetchProcess"
+                    />
+                    <Button
+                        id="fetchSupplierButton"
+                        text="Fetch Supplier"
+                        press=".onFetchSupplier"
                     />
                     <!-- Tedarikçi Adı Filter -->
                     <Label
@@ -317,7 +277,7 @@
                                     text="Last Name"
                                 />
                             </Column>
-                            <Column id="ColumnSupplierTitle">
+                            <!--   <Column id="ColumnSupplierTitle">
                                 <Text
                                     id="fetchsuppliertitleText"
                                     text="Title"
@@ -328,7 +288,7 @@
                                     id="fetchsupplierAddressText"
                                     text="Address"
                                 />
-                            </Column>
+                            </Column> -->
                             <Column id="ColumnProductCode">
                                 <Text
                                     id="fetchproductcodeText"
@@ -406,14 +366,14 @@
                                         id="fetchLastName"
                                         text="{processModel>lastname}"
                                     />
-                                    <Text
-                                        id="fetchTitle"
-                                        text="{processModel>title}"
+                                    <!--  <Text
+                                        id="fetchSupplierTitle"
+                                        text="{supplierModel>title}"
                                     />
                                     <Text
                                         id="fetchAddress"
                                         text="{processModel>address}"
-                                    />
+                                    /> -->
                                     <Text
                                         id="fetchProductCode"
                                         text="{processModel>product_code}"
@@ -450,136 +410,54 @@
                             </ColumnListItem>
                         </items>
                     </Table>
-                </VBox>
-                <Button
-                    id="onExportToExel"
-                    text="Excel Olarak İndir"
-                    press="onExportToExcel"
-                />
-                <Button
-                    id="update"
-                    text="Update"
-                    press=".onSaveProcessEditData"
-                />
-
-                <Button
-                    id="driversHomeButton"
-                    text="Geri Dön"
-                    press=".onNavigateToHome"
-                />
-            </content>
-        </Page>
-
-        <!-- <Page
-            id="driversPage"
-            title="Drivers"
-        >
-            <content>
-                <VBox id="DriverBox">
-                    <Label
-                        id="firstnameText"
-                        text="FirstName"
-                    />
-                    <Input
-                        id="firstnameInput"
-                        placeholder="Firstname"
-                    />
-
-                    <Label
-                        id="lastnameText"
-                        text="LastName"
-                    />
-                    <Input
-                        id="lastnameInput"
-                        placeholder="Lastname"
-                    />
-
-                    <Label
-                        id="identityText"
-                        text="Identity"
-                    />
-                    <Input
-                        id="identityInput"
-                        placeholder="Identity"
-                    />
-
-                    <Label
-                        id="phoneText"
-                        text="Phone"
-                    />
-                    <Input
-                        id="phoneInput"
-                        placeholder="Phone"
-                    />
-
-                    <Label
-                        id="lisenceText"
-                        text="Driving License"
-                    />
-                    <Input
-                        id="lisenceInput"
-                        placeholder="Driving License"
-                    />
-
-                    <Button
-                        id="saveButton"
-                        text="Save Data"
-                        press=".onSaveDriverData"
-                    />
-                    <Button
-                        id="fetchDriversButton"
-                        text="Fetch Drivers"
-                        press=".onFetchDrivers"
-                    />
                     <Table
-                        id="driverTable"
-                        items="{driversModel>/drivers}"
+                        id="supplierTable"
+                        items="{supplierModel>/suppliers}"
                     >
                         <columns>
-                            <Column id="ColumnFirstName">
+                            <Column id="titleColumn">
                                 <Text
-                                    id="fetchfirstnameText"
-                                    text="First Name"
+                                    id="titleText"
+                                    text="Title"
                                 />
                             </Column>
-                            <Column id="ColumnLastName">
+                            <Column id="addressColumn">
                                 <Text
-                                    id="fetchlastnameText"
-                                    text="Last Name"
+                                    id="addressText"
+                                    text="Address"
                                 />
                             </Column>
-                            <Column id="ColumnPhone">
+                            <Column id="taxOfficeColumn">
                                 <Text
-                                    id="fetchPhoneText"
-                                    text="Phone"
+                                    id="taxOfficeText"
+                                    text="Tax Office"
                                 />
                             </Column>
-                            <Column id="ColumnLisence">
+                            <Column id="taxNumberColumn">
                                 <Text
-                                    id="fetchlisence"
-                                    text="License"
+                                    id="taxNumberText"
+                                    text="Tax Number"
                                 />
                             </Column>
                         </columns>
-
                         <items>
-                            <ColumnListItem id="fetchItem">
+                            <ColumnListItem id="supplierFetchItems">
                                 <cells>
                                     <Text
-                                        id="fetchFirstName"
-                                        text="{driversModel>firstname}"
+                                        id="fetchTitle"
+                                        text="{supplierModel>title}"
                                     />
                                     <Text
-                                        id="fetchLastName"
-                                        text="{driversModel>lastname}"
+                                        id="fetchAddress"
+                                        text="{supplierModel>address}"
                                     />
                                     <Text
-                                        id="fetchPhone"
-                                        text="{driversModel>phone}"
+                                        id="suppliertaxoffice"
+                                        text="{supplierModel>tax_office}"
                                     />
                                     <Text
-                                        id="fetchLisence"
-                                        text="{driversModel>driving_license}"
+                                        id="suppliertaxnumber"
+                                        text="{supplierModel>tax_number}"
                                     />
                                 </cells>
                             </ColumnListItem>
@@ -587,295 +465,27 @@
                     </Table>
                 </VBox>
                 <Button
+                    id="onExportToExel"
+                    text="Excel Olarak İndir"
+                    press="onDownloadExcel"
+                />
+                <Button
+                    id="update"
+                    text="Update"
+                    press=".onSaveProcessEditData"
+                />
+                <Button
+                    id="updateSupplier"
+                    text="Update Supplier"
+                    press=".onSaveSupplierEditData"
+                />
+
+                <Button
                     id="driversHomeButton"
                     text="Geri Dön"
                     press=".onNavigateToHome"
                 />
             </content>
         </Page>
-        <Page
-            id="productsPage"
-            title="Products"
-        >
-            <content>
-                <Label
-                    id="productCodeText"
-                    text="Product Code"
-                />
-                <Input
-                    id="productCodeInput"
-                    placeholder="ProductCode"
-                />
-
-                <Label
-                    id="productDefinitionText"
-                    text="Product Definition"
-                />
-                <Input
-                    id="productDefinitionInput"
-                    placeholder="Product Definition"
-                />
-                <Button
-                    id="saveProductButton"
-                    text="Save Data"
-                    press=".onSaveProductData"
-                />
-                <Button
-                    id="fetchProductButton"
-                    text="Fetch Product"
-                    press=".onFetchProduct"
-                />
-
-                <Table
-                    id="productTable"
-                    items="{productModel>/products}"
-                >
-                    <columns>
-                        <Column id="ColumnProductCode">
-                            <Text
-                                id="fetchproductcodeText"
-                                text="Product Code"
-                            />
-                        </Column>
-                        <Column id="ColumnProductDefinition">
-                            <Text
-                                id="fetchproductdefinitionText"
-                                text="Product Definition"
-                            />
-                        </Column>
-                    </columns>
-                    <items>
-                        <ColumnListItem id="fetchProductItem">
-                            <cells>
-                                <Text
-                                    id="productcode"
-                                    text="{productModel>product_code}"
-                                />
-                                <Text
-                                    id="productdefinition"
-                                    text="{productModel>product_definition}"
-                                />
-                            </cells>
-                        </ColumnListItem>
-                    </items>
-                </Table>
-                <VBox id="productVBox">
-                    <Button
-                        id="productHomeButton"
-                        text="Geri Dön"
-                        press=".onNavigateToHome"
-                    />
-                </VBox>
-            </content>
-        </Page>
-        <Page
-            id="supplierPage"
-            title="Supplier"
-        >
-            <content>
-                <Label
-                    id="supplierTitleText"
-                    text="Supplier Title"
-                />
-                <Input
-                    id="supplierTitleInput"
-                    placeholder="Supplier Title"
-                />
-
-                <Label
-                    id="supplierAddressText"
-                    text="Supplier Address"
-                />
-                <Input
-                    id="supplierAddressInput"
-                    placeholder="Supplier Address"
-                />
-                <Label
-                    id="supplierTaxOfficeText"
-                    text="Tax Office"
-                />
-                <Input
-                    id="supplierTaxOfficeInput"
-                    placeholder="Tax Office"
-                />
-                <Label
-                    id="supplierTaxNumberText"
-                    text="Tax Number"
-                />
-                <Input
-                    id="supplierTaxNumberInput"
-                    placeholder="Tax Number"
-                />
-                <Button
-                    id="saveSupplierButton"
-                    text="Save Data"
-                    press=".onSaveSupplierData"
-                />
-                <Button
-                    id="fetchSupplierButton"
-                    text="Fetch Supplier"
-                    press=".onFetchSupplier"
-                />
-
-                <Table
-                    id="supplierTable"
-                    items="{supplierModel>/suppliers}"
-                >
-                    <columns>
-                        <Column id="ColumnSupplierTitle">
-                            <Text
-                                id="fetchsuppliertitleText"
-                                text="Title"
-                            />
-                        </Column>
-                        <Column id="ColumnSupplierAddress">
-                            <Text
-                                id="fetchsupplierAddressText"
-                                text="Address"
-                            />
-                        </Column>
-                        <Column id="ColumnSupplierTaxOffice">
-                            <Text
-                                id="fetchsupplierTaxOfficeText"
-                                text="Tax Office"
-                            />
-                        </Column>
-                        <Column id="ColumnSupplierTaxNumber">
-                            <Text
-                                id="fetchsupplierTaxNumberText"
-                                text="Tax Number"
-                            />
-                        </Column>
-                    </columns>
-                    <items>
-                        <ColumnListItem id="fetchSupplierItem">
-                            <cells>
-                                <Text
-                                    id="suppliertitle"
-                                    text="{supplierModel>title}"
-                                />
-                                <Text
-                                    id="supplierAddress"
-                                    text="{supplierModel>address}"
-                                />
-                                <Text
-                                    id="supplierTaxOffice"
-                                    text="{supplierModel>tax_office}"
-                                />
-                                <Text
-                                    id="supplierTaxNumber"
-                                    text="{supplierModel>tax_number}"
-                                />
-                            </cells>
-                        </ColumnListItem>
-                    </items>
-                </Table>
-                <VBox id="supplierVBox">
-                    <Button
-                        id="supplierHomeButton"
-                        text="Geri Dön"
-                        press=".onNavigateToHome"
-                    />
-                </VBox>
-            </content>
-        </Page>
-
-        <Page
-            id="vehiclePage"
-            title="Vehicle"
-        >
-            <content>
-                <Label
-                    id="license_plate"
-                    text="License Plate"
-                />
-                <Input
-                    id="licenseplateInput"
-                    placeholder="License Plate"
-                />
-
-                <Label
-                    id="registration_no"
-                    text="Registration No"
-                />
-                <Input
-                    id="registrationInput"
-                    placeholder="Registration No"
-                />
-                <Label
-                    id="trailer_plate"
-                    text="Trailer Plate"
-                />
-                <Input
-                    id="trailerplateInput"
-                    placeholder="Trailer Plate"
-                />
-               
-                <Button
-                    id="saveVehicleButton"
-                    text="Save Data"
-                    press=".onSaveVehicleData"
-                />
-                <Button
-                    id="fetchVehicleButton"
-                    text="Fetch Vehicle"
-                    press=".onFetchVehicle"
-                />
-
-                <Table
-                    id="vehicleTable"
-                    items="{vehicleModel>/vehicles}"
-                >
-                    <columns>
-                        <Column id="Columnlicense_plate">
-                            <Text
-                                id="fetchlicense_plate"
-                                text="license_plate"
-                            />
-                        </Column>
-                        <Column id="Columnregistration_no">
-                            <Text
-                                id="fetchregistration_noText"
-                                text="registration_no"
-                            />
-                        </Column>
-                        <Column id="Columntrailer_plate">
-                            <Text
-                                id="fetchtrailer_plateText"
-                                text="trailer_plate"
-                            />
-                        </Column>
-                    </columns>
-                    <items>
-                        <ColumnListItem id="fetchVehicleItem">
-                            <cells>
-                                <Text
-                                    id="licenseplate"
-                                    text="{vehicleModel>license_plate}"
-                                />
-                                <Text
-                                    id="registrationno"
-                                    text="{vehicleModel>registration_no}"
-                                />
-                                <Text
-                                    id="trailerplate"
-                                    text="{vehicleModel>trailer_plate}"
-                                />
-                            
-                            </cells>
-                        </ColumnListItem>
-                    </items>
-                </Table>
-                <VBox id="vehicleVBox">
-                    <Button
-                        id="vehicleHomeButton"
-                        text="Geri Dön"
-                        press=".onNavigateToHome"
-                    />
-                </VBox>
-            </content>
-        </Page> -->
     </App>
-    
 </mvc:View>
-
