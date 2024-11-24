@@ -2,16 +2,20 @@
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     controllerName="test.test.controller.App"
-    
 >
-  
-    <App id="app" class="myAppCustom">
+    <App
+        id="app"
+        class="myAppCustom"
+    >
         <Page
             id="processPage"
             title="Process"
         >
             <content>
-                <VBox id="ProcessBox" class="myVBoxClass">  
+                <VBox
+                    id="ProcessBox"
+                    class="myVBoxClass"
+                >
                     <Label
                         id="license_plate"
                         text="License Plate"
@@ -107,6 +111,16 @@
                         id="supplierTitleInput"
                         placeholder="Supplier Title"
                     />
+                    
+                    <!--
+                    <ComboBox
+                        id="supplierIdInput"
+                        placeholder="Select Supplier"
+                        items="{supplierModel>/suppliers}"  
+
+                    >
+                    <core:Item id="{supplierModel>id}" key="{supplierModel>id}" text="{supplierModel>title}" />
+                    </ComboBox> -->
 
                     <Label
                         id="supplierAddressText"
@@ -289,6 +303,12 @@
                                     text="Address"
                                 />
                             </Column> -->
+                            <Column id="ColumnSupplierTitle">
+                                <Text
+                                    id="fetchsuppliertitleText"
+                                    text="Supplier title"
+                                />
+                            </Column>
                             <Column id="ColumnProductCode">
                                 <Text
                                     id="fetchproductcodeText"
@@ -374,6 +394,10 @@
                                         id="fetchAddress"
                                         text="{processModel>address}"
                                     /> -->
+                                    <Text
+                                        id="fetchSupplierTitle"
+                                        text="{processModel>title}"
+                                    />
                                     <Text
                                         id="fetchProductCode"
                                         text="{processModel>product_code}"

@@ -25,9 +25,11 @@
         entry_date,
         release_date,
         delivery_date,
-        delivery_no} = req.body;
+        delivery_no
+        } = req.body;
  
         try {
+
             const newProcess = await WeighingProcess.create({
                 receipt_no,
                 license_plate,

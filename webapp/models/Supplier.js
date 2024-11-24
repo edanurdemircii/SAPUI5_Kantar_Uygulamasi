@@ -1,6 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../db'); 
 
+
 const Suppllier = sequelize.define('Suppllier', {
    
     title: {
@@ -20,5 +21,4 @@ const Suppllier = sequelize.define('Suppllier', {
         allowNull: false,
     }
 });
-
 module.exports = Suppllier; 

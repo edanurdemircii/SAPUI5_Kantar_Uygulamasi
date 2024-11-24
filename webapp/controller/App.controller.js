@@ -29,6 +29,7 @@ sap.ui.define(
         this.getView().setModel(oSupplierModel, "supplierModel");
       },
 
+
       onSaveProcessData: function () {
         const receipt_no = 'REC' + Math.floor(Math.random() * 1000000);  
         const license_plate = this.byId("licenseplateInput").getValue();
@@ -54,6 +55,7 @@ sap.ui.define(
         const release_date = new Date(this.byId("releaseDateInput").getValue());
         const delivery_date = new Date(this.byId("deliveryDateInput").getValue());
         const delivery_no = this.byId("deliveryNoInput").getValue();
+
     
         if (
             !license_plate ||
@@ -106,6 +108,8 @@ sap.ui.define(
                 release_date,
                 delivery_date,
                 delivery_no,
+                title,
+
             }),
         })
             .then((response) => {
@@ -199,6 +203,10 @@ sap.ui.define(
                   //   editable: true,
                   // }),
                   new sap.m.Input({
+                    value: "{processModel>title}",
+                    editable: true,
+                  }),
+                  new sap.m.Input({
                     value: "{processModel>product_code}",
                     editable: true,
                   }),
@@ -230,6 +238,7 @@ sap.ui.define(
                     value: "{processModel>delivery_no}",
                     editable: true,
                   }),
+
                 ],
               }),
             });
@@ -352,7 +361,7 @@ sap.ui.define(
         });
       },
       onFilterData: function () {
-        var title = this.byId("fetchTitle").getValue();
+        var title = this.byId("supplierFilterInput").getValue();
         var license_plate = this.byId("licensePlateFilterInput").getValue();
         var startDate = this.byId("startDateInput").getDateValue();
         var endDate = this.byId("endDateInput").getDateValue();
@@ -360,8 +369,8 @@ sap.ui.define(
         var aFilters = [];
       
         if (title) {
-          aFilters.push(new sap.ui.model.Filter("title", sap.ui.model.FilterOperator.Contains, title));
-        }
+           aFilters.push(new sap.ui.model.Filter("title", sap.ui.model.      FilterOperator.Contains, title));
+         }
       
         if (license_plate) {
           aFilters.push(new sap.ui.model.Filter("license_plate", sap.ui.model.FilterOperator.Contains, license_plate));

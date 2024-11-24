@@ -67,6 +67,11 @@ const WeighingProcess = sequelize.define('WeighingProcess', {
   delivery_no: {
     type: DataTypes.STRING,
   },
+  title: {
+    type: DataTypes.STRING,
+    allowNull: false,
+
+  },
 
 });
 
