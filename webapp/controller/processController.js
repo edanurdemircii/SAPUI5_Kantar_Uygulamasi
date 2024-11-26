@@ -1,5 +1,4 @@
 const WeighingProcess = require("../models/WeighingProcess");
-// Tüm product'ları getir
 const getAllProcess = async (req, res) => {
   try {
     const process = await WeighingProcess.findAll();

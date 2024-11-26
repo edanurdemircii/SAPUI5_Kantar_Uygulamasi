@@ -1,0 +1,106 @@
+/* Genel Uygulama Stili */
+.myAppCustom {
+    background-color: #f8f9fa; 
+    font-family: Arial, sans-serif; 
+    color: #333; 
+  }
+  
+ 
+  .myVBoxClass {
+    margin: 20px;
+    padding: 20px;
+    background-color: #ffffff; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .sapMLabel {
+    font-weight: bold;
+    margin-bottom: 5px; 
+    color: #555; 
+  }
+  
+  .sapMInput {
+    margin-bottom: 15px; 
+    font-size: 14px;
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    width: 100%;
+    box-sizing: border-box; 
+  }
+  
+  .sapMInput:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none; 
+  }
+  
+  .sapMBtn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #007bff; 
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sapMBtn:hover {
+    background-color: #0056b3; 
+  }
+  
+  .sapMBtn:active {
+    background-color: #003f7f; 
+  }
+  
+  .sapMTable {
+    background-color: #007bff;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .sapMTable th,
+  .sapMTable td {
+    border: 1px solid #ddd; 
+    padding: 10px;
+    text-align: left;
+    background-color: #007bff; 
+    font-weight: bold;
+  }
+ 
+  .sapMFlexItemAlignAuto {
+    gap: 5px;
+    align-self: auto;
+}
+  .sapUiSizeCompact .sapMColumnHeader{
+    background-color: #007bff;
+  }
+  .sapMBtnContent {
+    background-color:white ;
+    font-size: medium;
+  }
+  .sapMTable tr:nth-child(even) {
+    background-color: #f9f9f9; 
+  }
+  
+  .sapMTable tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .sapMDatePicker {
+    margin-bottom: 15px;
+  }
+  
+  .sapMDatePicker input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  

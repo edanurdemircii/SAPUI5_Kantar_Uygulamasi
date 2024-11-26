@@ -102,7 +102,7 @@
                     <Input
                         id="productDefinitionInput"
                         placeholder="Product Definition"
-                    />
+                    /> 
                     <Label
                         id="supplierTitleText"
                         text="Supplier Title"
@@ -111,7 +111,46 @@
                         id="supplierTitleInput"
                         placeholder="Supplier Title"
                     />
-                    
+                    <Table
+                        id="productTable"
+                        items="{processModel>/process}"
+                    >
+                        <columns>
+                            <Column id="productcodeColumn">
+                                <Text id="productcode" text="Product Code" />
+                            </Column>
+                            <Column id="productdefinitionColumn">
+                                <Text id="productdefinition" text="Product Definition" />
+                            </Column>
+                            <Column id="actionsColumn">
+                                <Text id="actions" text="Actions" />
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem id="productColumnList">
+                                <cells>
+                                    <Text id="productcodeId" text="{processModel>product_code}" />
+                                    <Text
+                                        id="productdefinitionId"
+                                        text="{processModel>product_definition}"
+                                    />
+                                    <Button
+                                       id="remove"
+                                        text="Remove"
+                                        press="onRemoveProduct"
+                                    />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+
+                    <!-- Ürün Ekle Butonu -->
+                    <Button
+                        id="addProductButton"
+                        text="Add Product"
+                        press="onAddProduct"
+                    />
+
                     <!--
                     <ComboBox
                         id="supplierIdInput"
@@ -398,10 +437,10 @@
                                         id="fetchSupplierTitle"
                                         text="{processModel>title}"
                                     />
-                                    <Text
+                                    <!-- <Text
                                         id="fetchProductCode"
                                         text="{processModel>product_code}"
-                                    />
+                                    /> -->
                                     <Text
                                         id="fetchFirstWeighing"
                                         text="{processModel>first_weighing}"
@@ -487,28 +526,22 @@
                             </ColumnListItem>
                         </items>
                     </Table>
+                    <Button
+                        id="onExportToExel"
+                        text="Excel Olarak İndir"
+                        press="onDownloadExcel"
+                    />
+                    <Button
+                        id="update"
+                        text="Update Process"
+                        press=".onSaveProcessEditData"
+                    />
+                    <Button
+                        id="updateSupplier"
+                        text="Update Supplier"
+                        press=".onSaveSupplierEditData"
+                    />
                 </VBox>
-                <Button
-                    id="onExportToExel"
-                    text="Excel Olarak İndir"
-                    press="onDownloadExcel"
-                />
-                <Button
-                    id="update"
-                    text="Update"
-                    press=".onSaveProcessEditData"
-                />
-                <Button
-                    id="updateSupplier"
-                    text="Update Supplier"
-                    press=".onSaveSupplierEditData"
-                />
-
-                <Button
-                    id="driversHomeButton"
-                    text="Geri Dön"
-                    press=".onNavigateToHome"
-                />
             </content>
         </Page>
     </App>

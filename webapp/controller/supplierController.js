@@ -1,6 +1,5 @@
 const Suppllier = require('../models/Supplier');
 
-// Tüm driver'ları getir
 const getAllSupplier= async (req, res) => {
     try {
         const supplier = await Suppllier.findAll();
