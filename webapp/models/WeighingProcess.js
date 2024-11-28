@@ -70,8 +70,10 @@ const WeighingProcess = sequelize.define('WeighingProcess', {
   title: {
     type: DataTypes.STRING,
     allowNull: false,
+    
 
   },
+  
 
 });
 
