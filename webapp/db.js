@@ -5,7 +5,7 @@ const dbConfig = require('../webapp/config');
 const sequelize = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.password, {
     host: "localhost",
     dialect:"mysql",
-    port: dbConfig.port,
+
 });
 
 module.exports = sequelize; 
